@@ -14,7 +14,16 @@ export class LoginComponent implements OnInit {
   }
 
   signInWithGitHub(): void {
-    this.loginService.signInWithGitHub();
+    this.loginService.signInWithGitHub()
+      .subscribe(
+        (succ) => {
+          console.log(succ);
+          console.log("here")
+        },
+        (err) => {
+          console.log(err);
+        }
+      )
   }
 
 }
