@@ -14,12 +14,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { ModalComponent } from './common/modal/modal.component';
 import { _environment as env } from './environment';
 import { ToastrModule } from 'ngx-toastr';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ModalComponent
+    ModalComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
