@@ -8,6 +8,8 @@ import { auth } from 'firebase/app';
   providedIn: 'root'
 })
 export class LoginService {
+  
+  isLoggedIn = false;
 
   constructor(private http: HttpClient,
               private auth: AngularFireAuth) { }
