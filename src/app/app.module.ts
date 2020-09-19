@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './pages/login/login.component';
 import { ModalComponent } from './common/modal/modal.component';
 import { _environment as env } from './environment';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { _environment as env } from './environment';
     AppRoutingModule,
     AngularFireModule.initializeApp(env.firebaseConfig),
     AngularFireAuthModule,
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
