@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LoginService } from 'src/app/services/login.service';
-import { NotificationService } from 'src/app/services/notification.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginService: LoginService,
-              private notifService: NotificationService,
-              private router: Router) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
@@ -22,15 +18,13 @@ export class LoginComponent implements OnInit {
     this.loginService.signInWithGitHub()
       .then(
         (_succ) => {
-          this.loginService.isLoggedIn = true;
-          this.router.navigateByUrl('/home');
-          this.notifService.showSuccess("Successfully logged in");
+          console.log(_succ);
         }
       ).catch(
         (_err) => {
-          this.notifService.showError("There was a problem loggin in, please try again later");
+          console.log(_err);
         }
-      );
+      )
   }
 
 }
