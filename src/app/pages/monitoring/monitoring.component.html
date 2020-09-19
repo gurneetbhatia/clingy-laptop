@@ -1,0 +1,21 @@
+<mat-card class="main-container">
+    <mat-card-content>
+        <form (ngSubmit)="onSubmit()" #infoForm="ngForm">
+            <h2 class="example-h2">Configure Monitoring</h2>
+
+            <section class="example-section">
+            <label class="example-margin">Work time:</label>
+            <mat-slider min="1" max="60" step="1" value="30" required [(ngModel)]="workTime" name="time">></mat-slider>
+            </section>
+
+            <section class="example-section">
+            <label class="example-margin">Git intergration: </label>
+            <mat-checkbox [(ngModel)]="enableGit" name="git">Check me!</mat-checkbox>
+            </section>
+
+            <section class="example-section">
+            <button type="submit" mat-raised-button color="primary">Start</button>
+            </section>
+        </form>
+    </mat-card-content>
+  </mat-card>
