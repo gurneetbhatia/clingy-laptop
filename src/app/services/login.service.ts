@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 
@@ -8,6 +8,8 @@ import { auth } from 'firebase/app';
   providedIn: 'root'
 })
 export class LoginService {
+  
+  isLoggedIn = false;
 
   constructor(private http: HttpClient,
               private auth: AngularFireAuth) { }

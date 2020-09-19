@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -15,7 +15,6 @@
     "@angular/animations": "~10.1.2",
     "@angular/cdk": "^9.2.4",
     "@angular/fire": "^6.0.2",
-    "@angular/router": "~9.1.11",
     "@fortawesome/angular-fontawesome": "^0.7.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
