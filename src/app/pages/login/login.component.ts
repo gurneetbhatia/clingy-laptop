@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   signInWithGitHub(): void {
     this.loginService.signInWithGitHub()
       .then(
-        (_succ) => {
+        (user) => {
           this.notifService.showSuccess("Successfully logged in");
         }
       ).catch(
