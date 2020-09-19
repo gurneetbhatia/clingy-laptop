@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-import { _environment as env } from '../environment';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private auth: AngularFireAuth) { }
 
-  signInWithGitHub(): Observable<any> {
-    return this.http.get("https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/authorize?scope=user:email&client_id="+env.github_client_id);
+  signInWithGitHub(): Promise<any> {
+    return this.auth.signInWithPopup(new auth.GithubAuthProvider());
   }
 }

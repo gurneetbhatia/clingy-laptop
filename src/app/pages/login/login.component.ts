@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
 
 import { LoginService } from 'src/app/services/login.service';
 
@@ -11,14 +9,22 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginService: LoginService,
-              private auth: AngularFireAuth) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
   signInWithGitHub(): void {
-    this.auth.signInWithPopup(new auth.GithubAuthProvider());
+    this.loginService.signInWithGitHub()
+      .then(
+        (_succ) => {
+          console.log(_succ);
+        }
+      ).catch(
+        (_err) => {
+          console.log(_err);
+        }
+      )
   }
 
 }
