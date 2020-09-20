@@ -1,0 +1,9 @@
+.main-container.mat-card {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 20%;
+}
+
+.example-section {
+    padding: 20px;
+}
